@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   String? weatherMessage;
   int? temperatureMax;
   int? temperatureMin;
-  int? feelLike;
+  // int? feelLike;
 
   @override
   void initState() {
@@ -36,18 +36,17 @@ class _HomePageState extends State<HomePage> {
         cityName = '';
         temperatureMax = 0;
         temperatureMin = 0;
-        feelLike = 0;
-
+        // feelLike = 0;
         return;
       }
       double temp = weatherData['main']['temp'];
       double tempMax = weatherData['main']['temp_max'];
       double tempMin = weatherData['main']['temp_min'];
-      double feels = weatherData['main']['feels_like'];
+      // double feels = weatherData['main']['feels_like'];
       temperature = temp.toInt();
       temperatureMax = tempMax.toInt();
       temperatureMin = tempMin.toInt();
-      feelLike = feels.toInt();
+      // feelLike = feels.toInt();
       var condition = weatherData['weather'][0]['id'];
       weatherIcon = weather.getWeatherIcon(condition);
       weatherMessage = weather.getMessage(temperature!);
@@ -59,7 +58,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Weather Forecast'),
+          title: const Text('Weather Wise'),
           centerTitle: true,
           elevation: 0,
           automaticallyImplyLeading: false,
@@ -149,14 +148,14 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                     ),
-                    Text(
-                      'Feels Like $feelLike°C',
-                      style: const TextStyle(
-                        fontFamily: 'Spartan MB',
-                        fontSize: 30.0,
-                        color: Colors.white,
-                      ),
-                    ),
+                    // Text(
+                    //   'Feels Like $feelLike°C',
+                    //   style: const TextStyle(
+                    //     fontFamily: 'Spartan MB',
+                    //     fontSize: 30.0,
+                    //     color: Colors.white,
+                    //   ),
+                    // ),
                   ],
                 ),
                 Padding(
